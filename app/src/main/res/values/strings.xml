@@ -7,4 +7,5 @@
     <string name="exit">EXIT</string>
     <string name="cancel">CANCEL</string>
     <string name="customercare">Enter your message here. Our executive will respond to you in next 24 hrs.</string>
+    <string name="access_token">sk.eyJ1IjoiaHJpc2hpLTMzMzEiLCJhIjoiY2p4MDBoeHh1MGZuODQ5cG9ocHdlMmtyMSJ9.9snVWDUe1LX8wZrg8n-cIw</string>
 </resources>
