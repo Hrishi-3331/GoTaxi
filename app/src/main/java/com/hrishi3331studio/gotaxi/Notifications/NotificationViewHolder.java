@@ -1,10 +1,10 @@
-package com.hrishi3331studio.template_informal.Notifications;
+package com.hrishi3331studio.gotaxi.Notifications;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
-import com.hrishi3331studio.template_informal.R;
+import com.hrishi3331studio.gotaxi.R;
 
 public class NotificationViewHolder extends RecyclerView.ViewHolder {
 

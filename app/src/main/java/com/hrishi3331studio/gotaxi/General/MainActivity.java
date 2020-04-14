@@ -1,4 +1,4 @@
-package com.hrishi3331studio.template_informal.General;
+package com.hrishi3331studio.gotaxi.General;
 
 import android.content.Context;
 import android.content.Intent;
@@ -21,13 +21,13 @@ import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.hrishi3331studio.template_informal.Dialogs.LoaderDialog;
-import com.hrishi3331studio.template_informal.Notifications.Notifications;
-import com.hrishi3331studio.template_informal.R;
-import com.hrishi3331studio.template_informal.Support.ContactUs;
-import com.hrishi3331studio.template_informal.Support.Support;
-import com.hrishi3331studio.template_informal.User.Profile;
-import com.hrishi3331studio.template_informal.UserAuth.SignUp;
+import com.hrishi3331studio.gotaxi.Dialogs.LoaderDialog;
+import com.hrishi3331studio.gotaxi.Notifications.Notifications;
+import com.hrishi3331studio.gotaxi.R;
+import com.hrishi3331studio.gotaxi.Support.ContactUs;
+import com.hrishi3331studio.gotaxi.Support.Support;
+import com.hrishi3331studio.gotaxi.User.Profile;
+import com.hrishi3331studio.gotaxi.UserAuth.SignUp;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.squareup.picasso.Picasso;
 

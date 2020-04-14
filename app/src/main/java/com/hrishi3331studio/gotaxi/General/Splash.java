@@ -1,4 +1,4 @@
-package com.hrishi3331studio.template_informal.General;
+package com.hrishi3331studio.gotaxi.General;
 
 import android.content.Intent;
 import android.os.Handler;
@@ -7,8 +7,8 @@ import android.os.Bundle;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.hrishi3331studio.template_informal.R;
-import com.hrishi3331studio.template_informal.UserAuth.Authentication;
+import com.hrishi3331studio.gotaxi.R;
+import com.hrishi3331studio.gotaxi.UserAuth.Authentication;
 
 public class Splash extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.hrishi3331studio.template_informal.UserAuth;
+package com.hrishi3331studio.gotaxi.UserAuth;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -19,8 +19,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.hrishi3331studio.template_informal.General.MainActivity;
-import com.hrishi3331studio.template_informal.R;
+import com.hrishi3331studio.gotaxi.General.MainActivity;
+import com.hrishi3331studio.gotaxi.R;
 
 public class SignUp extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.hrishi3331studio.template_informal;
+package com.hrishi3331studio.gotaxi;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

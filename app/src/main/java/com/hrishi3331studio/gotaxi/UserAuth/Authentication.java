@@ -1,4 +1,4 @@
-package com.hrishi3331studio.template_informal.UserAuth;
+package com.hrishi3331studio.gotaxi.UserAuth;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -17,8 +17,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.hrishi3331studio.template_informal.General.MainActivity;
-import com.hrishi3331studio.template_informal.R;
+import com.hrishi3331studio.gotaxi.General.MainActivity;
+import com.hrishi3331studio.gotaxi.R;
 
 public class Authentication extends AppCompatActivity {
 

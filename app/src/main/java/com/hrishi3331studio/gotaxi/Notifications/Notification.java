@@ -1,4 +1,4 @@
-package com.hrishi3331studio.template_informal.Notifications;
+package com.hrishi3331studio.gotaxi.Notifications;
 
 public class Notification {
 

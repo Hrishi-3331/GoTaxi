@@ -1,4 +1,4 @@
-package com.hrishi3331studio.template_informal;
+package com.hrishi3331studio.gotaxi;
 
 import org.junit.Test;
 

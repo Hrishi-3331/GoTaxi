@@ -1,34 +1,42 @@
 {
   "project_info": {
-    "project_number": "147181228397",
-    "firebase_url": "https://template-ef606.firebaseio.com",
-    "project_id": "template-ef606",
-    "storage_bucket": "template-ef606.appspot.com"
+    "project_number": "1094354151829",
+    "firebase_url": "https://gotaxi-eca14.firebaseio.com",
+    "project_id": "gotaxi-eca14",
+    "storage_bucket": "gotaxi-eca14.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:147181228397:android:38b516edd6726c37eb0a64",
+        "mobilesdk_app_id": "1:1094354151829:android:260650af8b4ea4dec0ee9c",
         "android_client_info": {
-          "package_name": "com.hrishi3331studio.template_informal"
+          "package_name": "com.hrishi3331studio.gotaxi"
         }
       },
       "oauth_client": [
         {
-          "client_id": "147181228397-usp28pielrfks0p39r3a700um3q4v8l5.apps.googleusercontent.com",
+          "client_id": "1094354151829-dog03cv7jvf56j4808dsc6o7ospio2h8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hrishi3331studio.gotaxi",
+            "certificate_hash": "20c2b8b746e32d5de32080f9c55f6d1adc3f7fff"
+          }
+        },
+        {
+          "client_id": "1094354151829-u66dv75vf73hls6gv9nu3h64s113s3nr.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDtPJbGB-NexZgnCCQzEetTqUvlOQozDh0"
+          "current_key": "AIzaSyB2Af0EvdYRk9xJwuSGpguVWtDNhz7QUA8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "147181228397-usp28pielrfks0p39r3a700um3q4v8l5.apps.googleusercontent.com",
+              "client_id": "1094354151829-u66dv75vf73hls6gv9nu3h64s113s3nr.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

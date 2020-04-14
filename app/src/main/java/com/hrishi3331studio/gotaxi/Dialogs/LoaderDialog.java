@@ -1,4 +1,4 @@
-package com.hrishi3331studio.template_informal.Dialogs;
+package com.hrishi3331studio.gotaxi.Dialogs;
 
 import android.app.ProgressDialog;
 import android.content.Context;

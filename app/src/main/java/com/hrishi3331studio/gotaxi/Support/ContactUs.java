@@ -1,4 +1,4 @@
-package com.hrishi3331studio.template_informal.Support;
+package com.hrishi3331studio.gotaxi.Support;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -6,7 +6,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.hrishi3331studio.template_informal.R;
+import com.hrishi3331studio.gotaxi.R;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;

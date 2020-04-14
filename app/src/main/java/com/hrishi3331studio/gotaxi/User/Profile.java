@@ -1,4 +1,4 @@
-package com.hrishi3331studio.template_informal.User;
+package com.hrishi3331studio.gotaxi.User;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -33,7 +33,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.hrishi3331studio.template_informal.R;
+import com.hrishi3331studio.gotaxi.R;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.squareup.picasso.Picasso;
 

@@ -1,4 +1,4 @@
-package com.hrishi3331studio.template_informal.Notifications;
+package com.hrishi3331studio.gotaxi.Notifications;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import android.view.View;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.hrishi3331studio.template_informal.R;
+import com.hrishi3331studio.gotaxi.R;
 
 public class Notifications extends AppCompatActivity {
 

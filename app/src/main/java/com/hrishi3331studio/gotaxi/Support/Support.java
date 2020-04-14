@@ -1,4 +1,4 @@
-package com.hrishi3331studio.template_informal.Support;
+package com.hrishi3331studio.gotaxi.Support;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,7 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.hrishi3331studio.template_informal.R;
+import com.hrishi3331studio.gotaxi.R;
 
 public class Support extends AppCompatActivity {
 
