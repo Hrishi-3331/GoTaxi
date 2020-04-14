@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Template-Informal</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="exit_application">Exit Application ?</string>
+    <string name="exit_confirm">Do you want to exit application?</string>
+    <string name="exit">EXIT</string>
+    <string name="cancel">CANCEL</string>
+    <string name="customercare">Enter your message here. Our executive will respond to you in next 24 hrs.</string>
+</resources>
