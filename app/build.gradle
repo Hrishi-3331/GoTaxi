@@ -16,6 +16,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -39,5 +43,9 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui:0.3.1'
     implementation 'com.makeramen:roundedimageview:2.3.0'
     implementation 'me.biubiubiu.justifytext:library:1.1'
+    implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:6.5.0'
+    implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-locationlayer:0.11.0'
+    implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation:0.13.0'
+    implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.13.0'
 }
 apply plugin: 'com.google.gms.google-services'
