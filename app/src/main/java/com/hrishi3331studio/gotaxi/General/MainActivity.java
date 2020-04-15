@@ -1,8 +1,10 @@
 package com.hrishi3331studio.gotaxi.General;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.location.Location;
 import android.net.ConnectivityManager;
 import android.os.PersistableBundle;
@@ -21,6 +23,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -30,6 +33,7 @@ import com.hrishi3331studio.gotaxi.R;
 import com.hrishi3331studio.gotaxi.Support.ContactUs;
 import com.hrishi3331studio.gotaxi.Support.Support;
 import com.hrishi3331studio.gotaxi.User.Profile;
+import com.hrishi3331studio.gotaxi.UserAuth.Authentication;
 import com.hrishi3331studio.gotaxi.UserAuth.SignUp;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.mapbox.android.core.location.LocationEngine;
@@ -38,8 +42,14 @@ import com.mapbox.android.core.location.LocationEnginePriority;
 import com.mapbox.android.core.location.LocationEngineProvider;
 import com.mapbox.android.core.permissions.PermissionsListener;
 import com.mapbox.android.core.permissions.PermissionsManager;
+import com.mapbox.api.geocoding.v5.models.CarmenFeature;
+import com.mapbox.geojson.Feature;
+import com.mapbox.geojson.FeatureCollection;
+import com.mapbox.geojson.Point;
 import com.mapbox.mapboxsdk.Mapbox;
+import com.mapbox.mapboxsdk.camera.CameraPosition;
 import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
+import com.mapbox.mapboxsdk.constants.Style;
 import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.location.modes.CameraMode;
 import com.mapbox.mapboxsdk.location.modes.RenderMode;
@@ -47,6 +57,9 @@ import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 import com.mapbox.mapboxsdk.plugins.locationlayer.LocationLayerPlugin;
+import com.mapbox.mapboxsdk.plugins.places.autocomplete.PlaceAutocomplete;
+import com.mapbox.mapboxsdk.plugins.places.autocomplete.model.PlaceOptions;
+import com.mapbox.mapboxsdk.style.sources.GeoJsonSource;
 import com.mapbox.services.android.navigation.v5.milestone.Milestone;
 import com.mapbox.services.android.navigation.v5.milestone.MilestoneEventListener;
 import com.mapbox.services.android.navigation.v5.routeprogress.RouteProgress;
@@ -62,6 +75,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private FirebaseUser mUser;
     private FirebaseAuth mAuth;
     private LoaderDialog dialog;
+    private TextView sourceBox;
+    private TextView destinationBox;
 
     private MapView mapView;
     private LocationLayerPlugin locationLayerPlugin;
@@ -69,6 +84,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private PermissionsManager permissionsManager;
     private MapboxMap mapboxMap;
     private Location origin;
+    private CarmenFeature home;
+    private CarmenFeature work;
+    private static final int REQUEST_CODE_AUTOCOMPLETE_SOURCE = 1;
+    private static final int REQUEST_CODE_AUTOCOMPLETE_DESTINATION = 2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +99,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         mapView = (MapView)findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
+
+        sourceBox = (TextView)findViewById(R.id.source);
+        destinationBox = (TextView)findViewById(R.id.destination);
 
         mapView.getMapAsync(this);
 
@@ -133,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
                     case R.id.logout:
                         FirebaseAuth.getInstance().signOut();
-                        startActivity(new Intent(MainActivity.this, SignUp.class));
+                        startActivity(new Intent(MainActivity.this, Authentication.class));
                         finish();
                         break;
 
@@ -164,6 +187,57 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         dialog = new LoaderDialog(MainActivity.this);
         checkConnectivity();
 
+    }
+
+    private void initSearchFab() {
+        destinationBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new PlaceAutocomplete.IntentBuilder()
+                        .accessToken(Mapbox.getAccessToken() != null ? Mapbox.getAccessToken() : getString(R.string.access_token))
+                        .placeOptions(PlaceOptions.builder()
+                                .backgroundColor(Color.parseColor("#EEEEEE"))
+                                .limit(10)
+                                .build(PlaceOptions.MODE_CARDS))
+                        .build(MainActivity.this);
+                startActivityForResult(intent, REQUEST_CODE_AUTOCOMPLETE_DESTINATION);
+            }
+        });
+
+        sourceBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new PlaceAutocomplete.IntentBuilder()
+                        .accessToken(Mapbox.getAccessToken() != null ? Mapbox.getAccessToken() : getString(R.string.access_token))
+                        .placeOptions(PlaceOptions.builder()
+                                .backgroundColor(Color.parseColor("#EEEEEE"))
+                                .limit(10)
+                                .build(PlaceOptions.MODE_CARDS))
+                        .build(MainActivity.this);
+                startActivityForResult(intent, REQUEST_CODE_AUTOCOMPLETE_SOURCE);
+            }
+        });
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == Activity.RESULT_OK) {
+
+            // Retrieve selected location's CarmenFeature
+            CarmenFeature selectedCarmenFeature = PlaceAutocomplete.getPlace(data);
+            switch (requestCode){
+                case REQUEST_CODE_AUTOCOMPLETE_DESTINATION:
+                    destinationBox.setText(selectedCarmenFeature.placeName());
+                    break;
+
+                case REQUEST_CODE_AUTOCOMPLETE_SOURCE:
+                    sourceBox.setText(selectedCarmenFeature.placeName());
+                    break;
+            }
+
+        }
     }
 
     private void checkConnectivity() {
@@ -358,7 +432,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void onMapReady(MapboxMap mapboxMap) {
         this.mapboxMap = mapboxMap;
         mapboxMap.setOnMapClickListener(this);
-
-
+        initSearchFab();
     }
 }

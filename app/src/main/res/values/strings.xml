@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Template-Informal</string>
+    <string name="app_name">GoTaxi</string>
     <string name="open">open</string>
     <string name="close">close</string>
     <string name="exit_application">Exit Application ?</string>
@@ -8,4 +8,6 @@
     <string name="cancel">CANCEL</string>
     <string name="customercare">Enter your message here. Our executive will respond to you in next 24 hrs.</string>
     <string name="access_token">sk.eyJ1IjoiaHJpc2hpLTMzMzEiLCJhIjoiY2p4MDBoeHh1MGZuODQ5cG9ocHdlMmtyMSJ9.9snVWDUe1LX8wZrg8n-cIw</string>
+    <string name="pickup_location">Pickup Location</string>
+    <string name="drop_location">Drop Location</string>
 </resources>

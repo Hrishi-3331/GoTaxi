@@ -36,9 +36,12 @@
                     >
 
                     <ImageView
+                        android:layout_marginRight="25dp"
+                        android:src="@drawable/name"
                         android:id="@+id/btn_logo"
                         android:layout_width="wrap_content"
-                        android:layout_height="27dp"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="-25dp"
                         android:layout_alignParentStart="true"
                         android:layout_gravity="left|center_horizontal"
                         />
@@ -60,8 +63,13 @@
                 android:orientation="vertical"
                 >
 
-                <EditText
-                    android:hint="Pickup Location"
+                <TextView
+                    android:maxLines="1"
+                    android:id="@+id/source"
+                    android:drawableTint="@color/colorPrimary"
+                    android:drawableLeft="@mipmap/baseline_my_location_black_24"
+                    android:drawablePadding="10dp"
+                    android:hint="@string/pickup_location"
                     android:layout_marginTop="10dp"
                     android:elevation="10dp"
                     android:layout_width="match_parent"
@@ -75,8 +83,13 @@
                     android:background="@drawable/textbox3"
                     />
 
-                <EditText
-                    android:hint="Drop Location"
+                <TextView
+                    android:maxLines="1"
+                    android:id="@+id/destination"
+                    android:drawableTint="@color/colorPrimary"
+                    android:drawableLeft="@mipmap/baseline_pin_drop_black_24"
+                    android:drawablePadding="10dp"
+                    android:hint="@string/drop_location"
                     android:elevation="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
